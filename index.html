@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juego Nibelungos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main id="pantalla-inicial">
+    <h1>Juego de los Nibelungos</h1>
+    <h2>Selecciona el equipo</h2>
+    <div class="equipos">
+      <div class="equipo" data-equipo="0" style="--color:#FF6B6B">
+        Grupo 1 <span class="puntos" contenteditable>0</span>
+      </div>
+      <div class="equipo" data-equipo="1" style="--color:#6BCB77">
+        Grupo 2 <span class="puntos" contenteditable>0</span>
+      </div>
+      <div class="equipo" data-equipo="2" style="--color:#4D96FF">
+        Grupo 3 <span class="puntos" contenteditable>0</span>
+      </div>
+    </div>
+  </main>
+
+  <section id="ruleta-container" class="oculto">
+    <h2 id="titulo-equipo"></h2>
+    <div class="ruleta-wrapper">
+      <div class="arrow"></div>
+      <canvas id="ruleta" width="500" height="500"></canvas>
+    </div>
+    <button id="btn-girar">⟳ Girar la ruleta</button>
+  </section>
+
+  <div id="modal" class="oculto">
+    <div class="modal-content">
+      <h3 id="resultado-opcion"></h3>
+      <div id="pregunta-contenido" class="oculto">
+        <p id="texto-pregunta"></p>
+        <div id="timer">20</div>
+        <button id="btn-correcto">✔ Correcto</button>
+        <button id="btn-incorrecto">✘ Incorrecto</button>
+      </div>
+      <div id="opciones-iniciales">
+        <button id="btn-dar-pregunta">Dar pregunta</button>
+        <button id="btn-cerrar">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="sonido-correcto" src="sounds/correcto.mp3"></audio>
+  <audio id="sonido-incorrecto" src="sounds/incorrecto.mp3"></audio>
+  <audio id="sonido-alarma" src="sounds/alarma.mp3"></audio>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
